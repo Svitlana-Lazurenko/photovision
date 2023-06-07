@@ -1,9 +1,8 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import css from './ImageGalleryItem.module.css';
 
 const ImageGalleryItem = ({
-  showModal,
+  openModal,
   webformatImage,
   largeImage,
   description,
@@ -13,7 +12,7 @@ const ImageGalleryItem = ({
       className={css.imageItemButton}
       type="button"
       onClick={() => {
-        showModal(largeImage, description);
+        openModal(largeImage, description);
       }}
     >
       <img
@@ -28,8 +27,8 @@ const ImageGalleryItem = ({
 export default ImageGalleryItem;
 
 ImageGalleryItem.propTypes = {
+  openModal: PropTypes.func.isRequired,
   webformatImage: PropTypes.string.isRequired,
-  showModal: PropTypes.func.isRequired,
   largeImage: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
 };
