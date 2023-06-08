@@ -41,7 +41,7 @@ const ImageGallery = ({ newSearchName, openModal }) => {
           return Promise.reject(new Error(`${searchName} not found`));
         }
 
-        setImagesArr([...imagesArr, ...imagesObj.hits]);
+        setImagesArr(PrevImages => [...PrevImages, ...imagesObj.hits]);
         setTotalHits(imagesObj.totalHits);
         setStatus(Status.RESOLVED);
       })
